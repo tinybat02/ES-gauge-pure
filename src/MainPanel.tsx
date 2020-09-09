@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { PanelProps } from '@grafana/data';
 import { PanelOptions, Frame } from 'types';
 import { processData } from './util/helpFuc';
-import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 interface Props extends PanelProps<PanelOptions> {}
@@ -49,10 +49,12 @@ export class MainPanel extends PureComponent<Props, State> {
         style={{
           width,
           height,
-          padding: 20,
+          padding: 10,
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <CircularProgressbarWithChildren value={num >= 200 ? 200 : (num / 200) * 100} text={num.toString()} />
+        <CircularProgressbar value={num >= 200 ? 200 : (num / 200) * 100} text={num.toString()} />
       </div>
     );
   }
