@@ -17,7 +17,6 @@ export class MainPanel extends PureComponent<Props, State> {
 
   componentDidMount() {
     const series = this.props.data.series as Frame[];
-    console.log('---initial--- ', this.props.data.series);
     if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
       return;
     }
@@ -29,7 +28,6 @@ export class MainPanel extends PureComponent<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.data.series !== this.props.data.series) {
-      console.log('---update--- ', this.props.data.series);
       const series = this.props.data.series as Frame[];
       if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
         this.setState({ num: 0 });
@@ -51,7 +49,7 @@ export class MainPanel extends PureComponent<Props, State> {
         style={{
           width,
           height,
-          padding: 10,
+          padding: 20,
         }}
       >
         <CircularProgressbarWithChildren value={num >= 200 ? 200 : (num / 200) * 100} text={num.toString()} />

@@ -1294,7 +1294,6 @@ function (_super) {
 
   MainPanel.prototype.componentDidMount = function () {
     var series = this.props.data.series;
-    console.log('---initial--- ', this.props.data.series);
 
     if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
       return;
@@ -1309,7 +1308,6 @@ function (_super) {
 
   MainPanel.prototype.componentDidUpdate = function (prevProps) {
     if (prevProps.data.series !== this.props.data.series) {
-      console.log('---update--- ', this.props.data.series);
       var series = this.props.data.series;
 
       if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
@@ -1336,7 +1334,7 @@ function (_super) {
       style: {
         width: width,
         height: height,
-        padding: 10
+        padding: 20
       }
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbarWithChildren"], {
       value: num >= 200 ? 200 : num / 200 * 100,
