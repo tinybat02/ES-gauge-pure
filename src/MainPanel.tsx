@@ -54,7 +54,7 @@ export class MainPanel extends PureComponent<Props, State> {
           justifyContent: 'center',
         }}
       >
-        <CircularProgressbar value={num >= 200 ? 200 : (num / 200) * 100} text={num.toString()} />
+        <CircularProgressbar value={num >= 600 ? 600 : (num / 600) * 100} text={num.toString()} />
       </div>
     );
   }

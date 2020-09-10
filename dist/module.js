@@ -1339,7 +1339,7 @@ function (_super) {
         justifyContent: 'center'
       }
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbar"], {
-      value: num >= 200 ? 200 : num / 200 * 100,
+      value: num >= 600 ? 600 : num / 600 * 100,
       text: num.toString()
     }));
   };
