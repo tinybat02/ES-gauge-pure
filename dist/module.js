@@ -1293,6 +1293,7 @@ function (_super) {
   }
 
   MainPanel.prototype.componentDidMount = function () {
+    console.log('xx-xx---- ', this.props.data);
     var series = this.props.data.series;
 
     if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
@@ -1400,19 +1401,11 @@ var defaults = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "processData", function() { return processData; });
 var processData = function processData(buffer) {
-  //   if (buffer.length == 1) return buffer[0];
-  //   if (buffer.length == 2) {
-  //     return buffer[0] > buffer[1] ? buffer[0] : buffer[1];
-  //   }
-  //   if (buffer.length > 2) return buffer[buffer.length - 2];
-  //   return 0;
-  if (buffer.slice(-1)[0] == 0) {
-    return buffer.slice(-7).reduce(function (total, elm) {
-      return total + elm;
-    }, 0);
-  }
-
-  return buffer.slice(-6).reduce(function (total, elm) {
+  // if (buffer.slice(-1)[0] == 0) {
+  //   return buffer.slice(-7).reduce((total, elm) => total + elm, 0);
+  // }
+  // return buffer.slice(-6).reduce((total, elm) => total + elm, 0);
+  return buffer.reduce(function (total, elm) {
     return total + elm;
   }, 0);
 };

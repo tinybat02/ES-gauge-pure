@@ -16,6 +16,7 @@ export class MainPanel extends PureComponent<Props, State> {
   };
 
   componentDidMount() {
+    console.log('xx-xx---- ', this.props.data);
     const series = this.props.data.series as Frame[];
     if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
       return;
