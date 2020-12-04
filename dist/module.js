@@ -1293,7 +1293,6 @@ function (_super) {
   }
 
   MainPanel.prototype.componentDidMount = function () {
-    console.log('xx-xx---- ', this.props.data);
     var series = this.props.data.series;
 
     if (series.length == 0 || series[0].fields[0].values.buffer.length == 0) {
@@ -1405,7 +1404,7 @@ var processData = function processData(buffer) {
   //   return buffer.slice(-7).reduce((total, elm) => total + elm, 0);
   // }
   // return buffer.slice(-6).reduce((total, elm) => total + elm, 0);
-  return buffer.reduce(function (total, elm) {
+  return buffer.slice(-7).reduce(function (total, elm) {
     return total + elm;
   }, 0);
 };
