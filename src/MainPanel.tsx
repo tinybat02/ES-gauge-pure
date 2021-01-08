@@ -41,7 +41,11 @@ export class MainPanel extends PureComponent<Props, State> {
   }
 
   render() {
-    const { width, height } = this.props;
+    const {
+      width,
+      height,
+      options: { threshold },
+    } = this.props;
     const { num } = this.state;
 
     return (
@@ -54,7 +58,7 @@ export class MainPanel extends PureComponent<Props, State> {
           justifyContent: 'center',
         }}
       >
-        <CircularProgressbar value={num >= 600 ? 600 : (num / 600) * 100} text={num.toString()} />
+        <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
       </div>
     );
   }
