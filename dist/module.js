@@ -104,6 +104,27 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "../node_modules/css-loader/dist/cjs.js?!../node_modules/postcss-loader/src/index.js?!../node_modules/sass-loader/lib/loader.js!./css/main.css":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js??ref--8-1!../node_modules/postcss-loader/src??ref--8-2!../node_modules/sass-loader/lib/loader.js!./css/main.css ***!
+  \**************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "../node_modules/css-loader/dist/runtime/getUrl.js");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./Ubuntu-Medium.ttf */ "./css/Ubuntu-Medium.ttf");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+exports.push([module.i, "@font-face {\n  font-family: 'Ubuntu';\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "), url(\"https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap\"); }\n", "",{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,0HAA6G,EAAE","file":"main.css","sourcesContent":["@font-face {\n  font-family: 'Ubuntu';\n  src: url(\"./Ubuntu-Medium.ttf\"), url(\"https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap\"); }\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/dist/runtime/api.js":
 /*!******************************************************!*\
   !*** ../node_modules/css-loader/dist/runtime/api.js ***!
@@ -206,6 +227,51 @@ function toComment(sourceMap) {
   var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
   return "/*# ".concat(data, " */");
 }
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/runtime/getUrl.js":
+/*!*********************************************************!*\
+  !*** ../node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== 'string') {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
+  }
+
+  return url;
+};
 
 /***/ }),
 
@@ -1287,6 +1353,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-circular-progressbar */ "../node_modules/react-circular-progressbar/dist/index.esm.js");
 /* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-circular-progressbar/dist/styles.css */ "../node_modules/react-circular-progressbar/dist/styles.css");
 /* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/main.css */ "./css/main.css");
+/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_css_main_css__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -1362,7 +1431,7 @@ function (_super) {
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       style: {
         marginTop: 15,
-        fontFamily: 'Brush Script MT, cursive',
+        fontFamily: 'Ubuntu, sans-serif',
         fontSize: '4em',
         textAlign: 'center'
       }
@@ -1373,6 +1442,47 @@ function (_super) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["PureComponent"]);
 
 
+
+/***/ }),
+
+/***/ "./css/Ubuntu-Medium.ttf":
+/*!*******************************!*\
+  !*** ./css/Ubuntu-Medium.ttf ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/public/plugins/id-count-es-gauge-pure/fonts/Ubuntu-Medium.ttf";
+
+/***/ }),
+
+/***/ "./css/main.css":
+/*!**********************!*\
+  !*** ./css/main.css ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--8-1!../../node_modules/postcss-loader/src??ref--8-2!../../node_modules/sass-loader/lib/loader.js!./main.css */ "../node_modules/css-loader/dist/cjs.js?!../node_modules/postcss-loader/src/index.js?!../node_modules/sass-loader/lib/loader.js!./css/main.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "../node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 

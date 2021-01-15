@@ -4,6 +4,7 @@ import { PanelOptions, Frame } from 'types';
 import { processData } from './util/helpFuc';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import './css/main.css';
 
 interface Props extends PanelProps<PanelOptions> {}
 interface State {
@@ -61,7 +62,7 @@ export class MainPanel extends PureComponent<Props, State> {
         }}
       >
         <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
-        <div style={{ marginTop: 15, fontFamily: 'Brush Script MT, cursive', fontSize: '4em', textAlign: 'center' }}>
+        <div style={{ marginTop: 15, fontFamily: 'Ubuntu, sans-serif', fontSize: '4em', textAlign: 'center' }}>
           Πελάτες εντός καταστήματος
         </div>
       </div>
