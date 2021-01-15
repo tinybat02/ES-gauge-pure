@@ -1350,22 +1350,14 @@ function (_super) {
       style: {
         width: width,
         height: height,
+        padding: 10,
         display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center'
+        justifyContent: 'center'
       }
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbar"], {
       value: num >= threshold ? threshold : num / threshold * 100,
       text: num.toString()
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        marginTop: 15,
-        fontFamily: 'Brush Script MT, cursive',
-        fontSize: '4em',
-        textAlign: 'center'
-      }
-    }, "\u03A0\u03B5\u03BB\u03AC\u03C4\u03B5\u03C2 \u03B5\u03BD\u03C4\u03CC\u03C2 \u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\u03AE\u03BC\u03B1\u03C4\u03BF\u03C2"));
+    }));
   };
 
   return MainPanel;
