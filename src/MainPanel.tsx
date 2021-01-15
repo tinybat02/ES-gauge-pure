@@ -56,14 +56,14 @@ export class MainPanel extends PureComponent<Props, State> {
           padding: 10,
           display: 'flex',
           justifyContent: 'center',
-          // flexDirection: 'column',
-          // alignItems: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
-        {/*         <div style={{ marginTop: 15, fontFamily: 'Brush Script MT, cursive', fontSize: '4em', textAlign: 'center' }}>
+        <div style={{ marginTop: 15, fontFamily: 'Brush Script MT, cursive', fontSize: '4em', textAlign: 'center' }}>
           Πελάτες εντός καταστήματος
-        </div> */}
+        </div>
       </div>
     );
   }
