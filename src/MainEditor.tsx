@@ -23,7 +23,9 @@ export const MainEditor: React.FC<PanelEditorProps<PanelOptions>> = ({ options, 
             type="number"
             name="threshold"
             value={input.threshold}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput({ threshold: parseInt(e.target.value) })}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setInput({ ...options, threshold: parseInt(e.target.value) })
+            }
           />
         </div>
       </div>

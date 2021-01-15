@@ -45,9 +45,30 @@ export class MainPanel extends PureComponent<Props, State> {
     const {
       width,
       height,
-      options: { threshold },
+      options: { threshold, showText },
     } = this.props;
     const { num } = this.state;
+
+    if (showText) {
+      return (
+        <div
+          style={{
+            width,
+            height,
+            padding: 10,
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
+          <div style={{ marginTop: 15, fontFamily: 'Ubuntu, sans-serif', fontSize: '4em', textAlign: 'center' }}>
+            Πελάτες εντός καταστήματος
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div
@@ -57,14 +78,9 @@ export class MainPanel extends PureComponent<Props, State> {
           padding: 10,
           display: 'flex',
           justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center',
         }}
       >
         <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
-        <div style={{ marginTop: 15, fontFamily: 'Ubuntu, sans-serif', fontSize: '4em', textAlign: 'center' }}>
-          Πελάτες εντός καταστήματος
-        </div>
       </div>
     );
   }

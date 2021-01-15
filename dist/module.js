@@ -1324,9 +1324,9 @@ var MainEditor = function MainEditor(_a) {
     name: "threshold",
     value: input.threshold,
     onChange: function onChange(e) {
-      return setInput({
+      return setInput(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, options), {
         threshold: parseInt(e.target.value)
-      });
+      }));
     }
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     className: "btn btn-primary",
@@ -1413,29 +1413,47 @@ function (_super) {
     var _a = this.props,
         width = _a.width,
         height = _a.height,
-        threshold = _a.options.threshold;
+        _b = _a.options,
+        threshold = _b.threshold,
+        showText = _b.showText;
     var num = this.state.num;
+
+    if (showText) {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        style: {
+          width: width,
+          height: height,
+          padding: 10,
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbar"], {
+        value: num >= threshold ? threshold : num / threshold * 100,
+        text: num.toString()
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        style: {
+          marginTop: 15,
+          fontFamily: 'Ubuntu, sans-serif',
+          fontSize: '4em',
+          textAlign: 'center'
+        }
+      }, "\u03A0\u03B5\u03BB\u03AC\u03C4\u03B5\u03C2 \u03B5\u03BD\u03C4\u03CC\u03C2 \u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\u03AE\u03BC\u03B1\u03C4\u03BF\u03C2"));
+    }
+
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       style: {
         width: width,
         height: height,
         padding: 10,
         display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center'
+        justifyContent: 'center'
       }
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbar"], {
       value: num >= threshold ? threshold : num / threshold * 100,
       text: num.toString()
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        marginTop: 15,
-        fontFamily: 'Ubuntu, sans-serif',
-        fontSize: '4em',
-        textAlign: 'center'
-      }
-    }, "\u03A0\u03B5\u03BB\u03AC\u03C4\u03B5\u03C2 \u03B5\u03BD\u03C4\u03CC\u03C2 \u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\u03AE\u03BC\u03B1\u03C4\u03BF\u03C2"));
+    }));
   };
 
   return MainPanel;
@@ -1521,7 +1539,8 @@ var plugin = new _grafana_ui__WEBPACK_IMPORTED_MODULE_0__["PanelPlugin"](_MainPa
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaults", function() { return defaults; });
 var defaults = {
-  threshold: 600
+  threshold: 600,
+  showText: false
 };
 
 /***/ }),
