@@ -64,7 +64,7 @@ export class MainPanel extends PureComponent<Props, State> {
         >
           <CircularProgressbar value={num >= threshold ? threshold : (num / threshold) * 100} text={num.toString()} />
           <div style={{ marginTop: 15, fontFamily: 'Ubuntu, sans-serif', fontSize: '4em', textAlign: 'center' }}>
-            Πελάτες εντός καταστήματος
+            Αριθμός Πελατών
           </div>
         </div>
       );
