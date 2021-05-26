@@ -9,9 +9,13 @@
       "name": "Nam Le"
     },
     "keywords": [],
+    "logos": {
+      "small": "img/gauge.svg",
+      "large": "img/gauge.svg"
+    },
     "screenshots": [],
     "version": "1.0.0",
-    "updated": "2021-01-18"
+    "updated": "2021-05-26"
   },
 
   "dependencies": {
