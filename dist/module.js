@@ -1451,7 +1451,7 @@ function (_super) {
         justifyContent: 'center'
       }
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_3__["CircularProgressbar"], {
-      value: num >= threshold ? threshold : num / threshold * 100,
+      value: num >= threshold ? 100 : num / threshold * 100,
       text: num.toString()
     }));
   };
