@@ -12,6 +12,8 @@ interface State {
 }
 
 export class MainPanel extends PureComponent<Props, State> {
+  previousStore: number[] = [];
+
   state: State = {
     num: 0,
   };
@@ -23,7 +25,9 @@ export class MainPanel extends PureComponent<Props, State> {
     }
 
     const buffer = series[0].fields[0].values.buffer;
-    const num = processData(buffer);
+    const { num, store } = processData(buffer, this.previousStore);
+
+    this.previousStore = store;
     this.setState({ num });
   }
 
@@ -36,7 +40,9 @@ export class MainPanel extends PureComponent<Props, State> {
       }
 
       const buffer = series[0].fields[0].values.buffer;
-      const num = processData(buffer);
+      const { num, store } = processData(buffer, this.previousStore);
+
+      this.previousStore = store;
       this.setState({ num });
     }
   }
